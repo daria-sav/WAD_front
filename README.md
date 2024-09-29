@@ -4,4 +4,6 @@ Repository for Web Application Development course.
 
 
 
-test
+Daria: index
+Milissa: addPost, css base
+Elisabeth: Login, github page
