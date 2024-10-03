@@ -1,4 +1,4 @@
-body {
+body.login {
     font-family: calibri;
     /************************************
     я хз, какой он там шрифт использует
@@ -17,7 +17,7 @@ body {
 }
 
 /* container style*/
-.container {
+body.login .container {
     background-color: rgb(216, 216, 216);
     padding: 20px 30px;     /* 20px on the top and bottom, 30px on the left and right.*/
     border-radius: 15px;    /* rounded corners */
