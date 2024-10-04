@@ -1,0 +1,85 @@
+/* Main container styling */
+main {
+    display: flex;
+    padding: 20px 0;
+}
+
+/* Container for posts to ensure vertical stacking */
+.posts-container {
+    display: flex;
+    flex-direction: column; /* aligns posts vertically */
+    width: 50%; /* limits the width of the posts */
+    max-width: 500px;
+    margin: 0 30px;
+}
+
+/* Styles for the post container */
+.post {
+    background-color: #f0f0f0;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; /* flexbox for vertical layout */
+}
+
+.post-header {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1.2em; /* increases the font size by 20% compared to the standard */
+}
+
+.post-image img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px; /* makes the image no wider than the post container (it will automatically adjust to the size) */
+}
+
+.post-content {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.post-footer {
+    text-align: right; /* aligns the footer content to the right. */
+}
+
+/* Styles for all icons in the footer (including different emojis) */
+.post-footer span {
+    cursor: pointer; /* changes the cursor to a pointer on mouse hover, indicating that the element is interactive */
+    font-size: 1.5em;
+    transition: transform 0.3s ease; /* smooth animation on hover */
+    display: inline-block; /* ensures that scaling works correctly */
+}
+
+/* General hover effect for icons */
+.post-footer span:hover {
+    transform: scale(1.2); /* scale the icon on hover */
+}
+
+/* Pseudo-element: adding text before post content */
+ .post-content::before {
+    content: "Post: ";
+    font-weight: bold;
+    color: #333;
+ }
+
+/* Sidebar styles */
+.sidebar {
+    width: 20%;
+    background-color: #e0e0e0;
+    min-height: 100vh; /* full height of the page */
+    margin: 0 5px;
+}
+
+ /* Responsiveness for mobile devices */
+ @media (max-width: 768px) { /* a media query that applies styles only to screens 768px wide and smaller */
+    .post {
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    .post-footer {
+        text-align: left;
+    }
+ }
