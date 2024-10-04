@@ -95,6 +95,7 @@ body.login .container {
 h2 {
     margin-bottom: 10px; /* Reduced margin for a compact look */
 }
+
 /* Target the first h2 for "Welcome" */
 .container h2:first-of-type { 
     font-weight: bold; /* Make "Welcome" bold */
