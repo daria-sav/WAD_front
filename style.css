@@ -25,6 +25,7 @@ header nav {
     justify-content: space-between; /* distributes elements within the navigation so that they are located at the edges: one block on the left, the other on the right */
     align-items: center;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 nav ul {
@@ -46,6 +47,17 @@ nav ul li a:hover {
     background-color: #aaa;
     padding: 5px;
     border-radius: 5px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #d3d3d3; 
+    padding: 10px 20px; 
+    text-align: center; 
+    border-radius: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    border-radius: 10px; 
 }
 
 /* container style*/
