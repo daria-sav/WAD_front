@@ -1,3 +1,4 @@
+body.addPost,
 body.login {
     font-family: calibri;
     /************************************
@@ -61,6 +62,7 @@ footer {
 }
 
 /* container style*/
+body.addpost .container, 
 body.login .container {
     background-color: rgb(216, 216, 216);
     padding: 20px 30px;     /* 20px on the top and bottom, 30px on the left and right.*/

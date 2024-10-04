@@ -1,0 +1,117 @@
+body{
+    display: flex;
+    align-items: center;
+    /*justify-content: space-between; */
+}
+
+#content {
+    flex: 1;
+    padding: 10px;
+    resize: none; /* Disable resize for consistency */
+    width: 100%; /* Ensure textarea fills available space */
+    box-sizing: border-box;
+    height: 80px;
+}
+
+.form-group button{
+    flex: 1;
+    box-sizing: border-box;
+    width: 100px;
+}
+
+#postForm{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+.container{
+    margin-top: 85px;
+    height: 200px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    flex: 0;
+    margin-right: 10px;
+    width: 100px; /* To align labels uniformly */
+}
+
+button[type="button"] {
+    display: inline-block;
+    padding: 10px;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+}
+
+button[type="submit"].btn {
+    flex: 1 100%;
+    display: block;
+    padding: 5px;
+    background-color: #1b5e8a;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #256D85;
+    justify-content: space-around;
+    font-family: 'Montserrat', sans-serif;
+    color: #06283D;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+/* Специфичные стили для body.addpost */ 
+body.addpost { 
+    font-family: calibri; 
+    min-height: 100vh; 
+    background-color: rgba(255, 255, 255); 
+    margin: 0; 
+    display: flex; 
+    flex-direction: column; 
+} 
+ 
+/* === Стили для шапки на странице добавления поста === */ 
+body.addpost .header { 
+    display: flex; 
+    justify-content: space-between; /* Размещаем элементы по краям */ 
+    align-items: center; 
+    background-color: rgb(31, 71, 125); 
+    padding: 10px 20px; 
+} 
+
+/* Стили для ссылки "Home" */ 
+body.addpost .header .home-link { 
+    color: #fff; 
+    text-decoration: none; 
+    font-size: 18px; 
+} 
+ 
+/* Стили для иконки пользователя */ 
+body.addpost .header .user-icon { 
+    width: 30px; 
+    height: 30px; 
+    background-color: #fff; 
+    border-radius: 50%; 
+} 
+ 
+/* Стили для поля выбора файла */ 
+input[type="file"] { 
+    font-family: Calibri, sans-serif; 
+} 
+ 
