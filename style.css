@@ -51,9 +51,22 @@ header .user-icon {
     border-radius: 50%; 
 } 
 
+/* Контейнер для навигационных ссылок (Home и Add Post) */
+.nav-links {
+    display: flex;
+    gap: 15px; /* Расстояние между ссылками */
+}
 
+header .addpost-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    margin-right: 20px; /* Отступ справа для кнопки */
+}
+
+/*
 nav ul {
-    list-style-type: none; /* removes standard list markers */
+    list-style-type: none; /* removes standard list markers 
     display: flex;
 }
 
@@ -62,7 +75,7 @@ nav ul li {
 }
 
 nav ul li a {
-    text-decoration: none; /* removes underlining from links */
+    text-decoration: none; /* removes underlining from links 
     color: #aaa;
     font-weight: bold;
 }
@@ -72,7 +85,7 @@ nav ul li a:hover {
     padding: 5px;
     border-radius: 5px;
 }
-
+*/
 /* Footer styles */
 footer {
     background-color: #d3d3d3; 

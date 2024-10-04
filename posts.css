@@ -11,6 +11,7 @@ main {
     width: 50%; /* limits the width of the posts */
     max-width: 500px;
     margin: 0 30px;
+    margin-top: 80px;
 }
 
 /* Styles for the post container */
@@ -21,6 +22,7 @@ main {
     border-radius: 10px;
     display: flex;
     flex-direction: column; /* flexbox for vertical layout */
+
 }
 
 /* Remove the indentation from the top of the first post */

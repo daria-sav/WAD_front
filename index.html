@@ -10,19 +10,15 @@
 </head>
 <body>
     <!--Navigation Bar-->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html" id="home">Home</a></li>
-                <li><a href="addPost.html" id="addPost">addPost</a></li>
-            </ul>
-            <div class="profile-icon">
-                <a href="Login.html">
-                    <img src="pictures/profileIcon.jpg" alt="Profile Icon" width="50" height="50">
-                </a>
-            </div>
-        </nav>
+    <header class="header">
+        <div class="nav-links"> <!-- Добавили контейнер для навигационных ссылок -->
+            <a href="index.html" class="home-link">Home</a>
+            <a href="addPost.html" class="addpost-link">Add Post</a>
+        </div>
+        <div class="user-icon"></div>
     </header>
+    
+    
     <!-- Main content with posts -->
      <main>
         <div class="sidebar"></div> <!-- Left panel -->
