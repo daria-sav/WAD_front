@@ -22,6 +22,7 @@ main {
     border-radius: 10px;
     display: flex;
     flex-direction: column; /* flexbox for vertical layout */
+    position: relative; /* Добавлено для управления позиционированием даты */   
 
 }
 
@@ -39,7 +40,17 @@ main {
     font-weight: bold;
     margin-bottom: 5px;
     font-size: 1.2em; /* increases the font size by 20% compared to the standard */
+    position: absolute;
+    top: 10px; /* Расположим дату в правом верхнем углу */
+    right: 10px; /* Отступ справа */
+    font-size: 0.9em; /* Немного уменьшаем размер даты */
 }
+
+/* Стили для контейнера с изображением в посте */
+.post-image {
+    margin-top: 25px; /* Отступ сверху между датой и изображением */
+}
+
 
 .post-image img {
     max-width: 100%;
