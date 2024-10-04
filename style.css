@@ -17,17 +17,38 @@ body.login {
     background-color: rgba(255, 255, 255);
 }
 
-/* Navigation Bar */
-/* Dasha */
-header nav {
-    background-color: #d3d3d3;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between; /* distributes elements within the navigation so that they are located at the edges: one block on the left, the other on the right */
-    align-items: center;
-    border-radius: 10px;
-    margin-bottom: 10px;
+/* === Стили для шапки на странице добавления поста === */ 
+header{
+    display: flex; 
+    justify-content: space-between; /* Размещаем элементы по краям */ 
+    align-items: center; 
+    background-color: rgb(31, 71, 125); 
+    padding: 10px 20px; 
+    flex-wrap: wrap;
+    /*justify-content: space-around;*/
+    font-family: 'Montserrat', sans-serif;
+    color: #06283D;
+    position: absolute;
+    left: 0;
+    right: 0;
 }
+
+
+/* Стили для ссылки "Home" */ 
+header .home-link { 
+    color: #fff; 
+    text-decoration: none; 
+    font-size: 18px; 
+} 
+ 
+/* Стили для иконки пользователя */ 
+header .user-icon { 
+    width: 30px; 
+    height: 30px; 
+    background-color: #fff; 
+    border-radius: 50%; 
+} 
+
 
 nav ul {
     list-style-type: none; /* removes standard list markers */
