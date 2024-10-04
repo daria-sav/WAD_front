@@ -1,7 +1,7 @@
 /* Main container styling */
 main {
     display: flex;
-    padding: 20px 0;
+    justify-content: space-between;
 }
 
 /* Container for posts to ensure vertical stacking */
@@ -21,6 +21,16 @@ main {
     border-radius: 10px;
     display: flex;
     flex-direction: column; /* flexbox for vertical layout */
+}
+
+/* Remove the indentation from the top of the first post */
+.post:first-child {
+    margin-top: 0;
+}
+
+/* Remove the bottom indent from the last post */
+.post:last-child {
+    margin-bottom: 0;
 }
 
 .post-header {
@@ -66,10 +76,10 @@ main {
 
 /* Sidebar styles */
 .sidebar {
-    width: 20%;
+    flex-grow: 1; /* sidebars automatically take up the remaining space */
     background-color: #e0e0e0;
     min-height: 100vh; /* full height of the page */
-    margin: 0 5px;
+    border-radius: 10px;
 }
 
  /* Responsiveness for mobile devices */
