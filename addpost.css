@@ -1,7 +1,6 @@
 body{
     display: flex;
     align-items: center;
-    /*justify-content: space-between; */
 }
 
 #content {
@@ -55,12 +54,11 @@ button[type="button"] {
 button[type="submit"].btn {
     flex: 1 100%;
     display: block;
-    padding: 5px;
+    padding: 10px 20px;
     background-color: #1b5e8a;
     color: white;
-    font-size: 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 3px;
     cursor: pointer;
 }
 
