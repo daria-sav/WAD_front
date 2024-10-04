@@ -45,7 +45,9 @@ header .home-link {
 header .user-icon { 
     width: 30px; 
     height: 30px; 
-    background-color: #fff; 
+    background-image: url('pictures/profileIcon.jpg');
+    background-size: cover; /* Обеспечит, что изображение заполнит элемент */
+    background-position: center;
     border-radius: 50%; 
 } 
 
@@ -61,7 +63,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none; /* removes underlining from links */
-    color: #000;
+    color: #aaa;
     font-weight: bold;
 }
 
