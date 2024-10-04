@@ -64,17 +64,7 @@ button[type="submit"].btn {
     cursor: pointer;
 }
 
-header{
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #256D85;
-    justify-content: space-around;
-    font-family: 'Montserrat', sans-serif;
-    color: #06283D;
-    position: absolute;
-    left: 0;
-    right: 0;
-}
+
 
 /* Специфичные стили для body.addpost */ 
 body.addpost { 
@@ -86,29 +76,7 @@ body.addpost {
     flex-direction: column; 
 } 
  
-/* === Стили для шапки на странице добавления поста === */ 
-body.addpost .header { 
-    display: flex; 
-    justify-content: space-between; /* Размещаем элементы по краям */ 
-    align-items: center; 
-    background-color: rgb(31, 71, 125); 
-    padding: 10px 20px; 
-} 
 
-/* Стили для ссылки "Home" */ 
-body.addpost .header .home-link { 
-    color: #fff; 
-    text-decoration: none; 
-    font-size: 18px; 
-} 
- 
-/* Стили для иконки пользователя */ 
-body.addpost .header .user-icon { 
-    width: 30px; 
-    height: 30px; 
-    background-color: #fff; 
-    border-radius: 50%; 
-} 
  
 /* Стили для поля выбора файла */ 
 input[type="file"] { 
