@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Post</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Нажатие на кнопку "Create Post" перенаправляет на страницу index.html
+        function redirectToIndex() {
+            window.location.href = "index.html"; 
+        }
+    </script>
+</head>
+<body class="addpost">
+    <!-- Шапка страницы -->
+    <header class="header">
+        <a href="index.html" class="home-link">Home</a>
+        <div class="user-icon"></div>
+    </header>
+
+    <!-- Основной контент страницы -->
+    <main class="main-content">
+        <div class="container">
+            <form id="postForm">
+                <!-- Поле для ввода текста поста -->
+                <div class="form-group">
+                    <label for="content">Post body</label>
+                    <textarea id="content" name="content" placeholder="Write your post here..." required></textarea>
+                </div>
+                <!-- Поле для загрузки файла -->
+                <div class="form-group">
+                    <label for="file">Select file</label>
+                    <input type="file" id="file" name="file" required>
+                </div>
+                <!-- Кнопка создания поста -->
+                <button type="submit" class="btn" onclick="redirectToIndex()">Create Post</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

@@ -16,6 +16,38 @@ body.login {
     background-color: rgba(255, 255, 255);
 }
 
+/* Navigation Bar */
+/* Dasha */
+header nav {
+    background-color: #d3d3d3;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; /* distributes elements within the navigation so that they are located at the edges: one block on the left, the other on the right */
+    align-items: center;
+    border-radius: 10px;
+}
+
+nav ul {
+    list-style-type: none; /* removes standard list markers */
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none; /* removes underlining from links */
+    color: #000;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    background-color: #aaa;
+    padding: 5px;
+    border-radius: 5px;
+}
+
 /* container style*/
 body.login .container {
     background-color: rgb(216, 216, 216);
