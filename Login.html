@@ -6,28 +6,35 @@
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
     <script>
-        // pressing on the login button redirects to the index.html page
+
+        // Function to redirect to index.html
         function redirectToIndex() {
             window.location.href = "index.html"; 
+        }
+
+        // Function to validate the form
+        function validateForm(event) {
+            event.preventDefault(); // Prevent default submission
+
+            let email = document.getElementById("email").value;
+            let username = document.getElementById("password").value;
+
+            if (email == "" || username == "") {
+                alert("Please fill in both email and password fields.");
+            } else {
+                redirectToIndex(); // Redirect to index.html if validation passes
+            }
         }
     </script>
 </head>
 
 <body class="login">
-    <!-- <header class="header">
-        <div class="nav-links">
-            <a href="index.html" class="home-link">Home</a>
-        </div>
-        <div class="user-icon"></div>
-    </header> -->
-
     <header>
         <nav>
             <ul>
                 <li><a href="index.html" id="home" class="home-link">Home</a></li>
             </ul>
             <div class="profile-icon">
-                <!-- Profile avatar link to login page -->
                 <a href="Login.html">
                     <img src="pictures/profileIcon.jpg" alt="Profile Icon" width="50" height="50">
                 </a>
@@ -44,14 +51,14 @@
         </div>
         <div class="form">
             <h>or<br>Please log in</h>
-            <form>
+            <form onsubmit="validateForm(event)">
                 <div>
                     <input type="text" id="email" name="email" placeholder="Email" required>
                 </div>
                 <div>
                     <input type="password" id="password" name="password" placeholder="Password" required>
                 </div>
-                <input type="submit" value="Log in" onclick="redirectToIndex()">
+                <input type="submit" value="Log in"> 
             </form>
             <div class="links">
                 <a href="#">Forget password</a>
