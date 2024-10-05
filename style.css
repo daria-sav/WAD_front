@@ -13,74 +13,72 @@ body.login {
     background-color: rgba(255, 255, 255);
 }
 
-/* === Стили для шапки на странице добавления поста === */ 
-header{
-    display: flex; 
-    justify-content: space-between; /* Размещаем элементы по краям */ 
-    align-items: center; 
-    background-color: rgb(31, 71, 125); 
-    padding: 10px 20px; 
-    flex-wrap: wrap;
-    /*justify-content: space-around;*/
-    font-family: 'Montserrat', sans-serif; /* mb calibri sdelat?*/
-    color: #06283D;
-    position: absolute;
-    z-index: 1000;
-    left: 0;
-    right: 0;
-}
-
-
-/* Стили для ссылки "Home" */ 
-header .home-link { 
-    color: #fff; 
-    text-decoration: none; 
-    font-size: 18px; 
-} 
- 
-/* Стили для иконки пользователя */ 
-header .user-icon { 
-    width: 30px; 
-    height: 30px; 
-    background-image: url('pictures/profileIcon.jpg');
-    background-size: cover; /* Обеспечит, что изображение заполнит элемент */
-    background-position: center;
-    border-radius: 50%; 
-} 
-
-/* Контейнер для навигационных ссылок (Home и Add Post) */
-.nav-links {
+/* Navigation Bar */
+header nav {
+    background-color: #1f477d; /* Keep the original background color */
+    padding: 10px 20px;
     display: flex;
-    gap: 15px; /* Расстояние между ссылками */
+    justify-content: space-between; /* Distribute elements to both sides */
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
 }
 
-header .addpost-link {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    margin-right: 20px; /* Отступ справа для кнопки */
-}
-
-/*
+/* Remove bullet points from the navigation items */
 nav ul {
-    list-style-type: none; /* removes standard list markers 
+    list-style-type: none; /* Removes the default bullet points */
     display: flex;
+    margin: 0;
+    padding: 0;
 }
 
+/* Styling each navigation item */
 nav ul li {
-    margin: 0 15px;
+    margin: 0 10px; /* Maintain space between items */
 }
 
+/* Styling for the links in the navigation */
 nav ul li a {
-    text-decoration: none; /* removes underlining from links 
-    color: #aaa;
+    text-decoration: none;
+    color: #fff; /* Keep text color white as originally */
+    font-size: 18px; /* Keep the original font size */
     font-weight: bold;
+    transition: background-color 0.3s ease;
+    padding: 5px; /* Fixed padding to prevent movement */
 }
 
+/* Hover effect for links in the navigation */
 nav ul li a:hover {
-    background-color: #aaa;
-    padding: 5px;
+    background-color: #132a48; /* Slightly darker background color */
     border-radius: 5px;
+}
+
+/* User profile container */
+.profile-icon {
+    width: 40px; /* Adjust width for better visibility */
+    height: 40px; /* Adjust height for better visibility */
+    border-radius: 50%; /* Make it fully rounded */
+    overflow: hidden; /* Ensure the image fits inside the rounded border */
+    border: 3px solid #fff; /* Add a white border to make it stand out */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Adds a soft shadow for visual pop */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-right: 10px;
+}
+
+/* Profile Icon Image Styling */
+.profile-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fits perfectly in the container */
+}
+
+/* Profile Icon Hover Effect */
+.profile-icon:hover {
+    transform: scale(1.1); /* Slightly enlarges the profile icon */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Darkens the shadow for emphasis */
 }
 
 /* Footer styles */
@@ -91,7 +89,6 @@ footer {
     border-radius: 10px;
     margin-top: 10px;
     font-weight: bold;
-    border-radius: 10px; 
 }
 
 /* container style*/

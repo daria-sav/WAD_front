@@ -9,24 +9,44 @@
 
 </head>
 <body>
+    
     <!--Navigation Bar-->
-    <header class="header">
-        <div class="nav-links"> <!-- Добавили контейнер для навигационных ссылок -->
+    <!-- <header class="header">
+        <div class="nav-links">  Added container for navigation links 
             <a href="index.html" class="home-link">Home</a>
             <a href="addPost.html" class="addpost-link">Add Post</a>
         </div>
         <div class="user-icon"></div>
-    </header>
+    </header> -->
     
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" id="home" class="home-link">Home</a></li>
+                <li><a href="addPost.html" id="addPost" class="addpost-link">Add Post</a></li>
+            </ul>
+            <div class="profile-icon">
+                <!-- Profile avatar link to login page -->
+                <a href="Login.html">
+                    <img src="pictures/profileIcon.jpg" alt="Profile Icon" width="50" height="50">
+                </a>
+            </div>
+        </nav>
+    </header>
     
     <!-- Main content with posts -->
      <main>
-        <div class="sidebar"></div> <!-- Left panel -->
+        <!-- Left panel -->
+        <div class="sidebar"></div> 
 
         <!-- Central container for posts -->
         <div class="posts-container">
             <!-- First post -->
             <div class="post">
+                <div class="post-avatar">
+                    <img src="pictures/profileIcon.jpg" alt="User Avatar">
+                </div>
                 <div class="post-header">
                     <span>Oct 2, 2024</span>
                 </div>
@@ -43,6 +63,9 @@
 
             <!-- Second post -->
             <div class="post">
+                <div class="post-avatar">
+                    <img src="pictures/profileIcon.jpg" alt="User Avatar">
+                </div>
                 <div class="post-header">
                     <span>Oct 2, 2024</span>
                 </div>
@@ -56,6 +79,9 @@
 
             <!-- Third post -->
             <div class="post">
+                <div class="post-avatar">
+                    <img src="pictures/profileIcon.jpg" alt="User Avatar">
+                </div>
                 <div class="post-header">
                     <span>Sept 30, 2024</span>
                 </div>
@@ -69,6 +95,9 @@
 
             <!-- Fourth post -->
             <div class="post">
+                <div class="post-avatar">
+                    <img src="pictures/profileIcon.jpg" alt="User Avatar">
+                </div>
                 <div class="post-header">
                     <span>Sept 25, 2024</span>
                 </div>
@@ -85,6 +114,9 @@
 
             <!-- Fifth post -->
             <div class="post">
+                <div class="post-avatar">
+                    <img src="pictures/profileIcon.jpg" alt="User Avatar">
+                </div>
                 <div class="post-header">
                     <span>Sept 20, 2024</span>
                 </div>
@@ -100,7 +132,8 @@
             </div>
         </div>
 
-        <div class="sidebar"></div> <!-- Right panel -->
+        <!-- Right panel -->
+        <div class="sidebar"></div> 
      </main>
 
      <!-- Footer -->

@@ -2,6 +2,7 @@
 main {
     display: flex;
     justify-content: space-between;
+    align-items: stretch;
 }
 
 /* Container for posts to ensure vertical stacking */
@@ -11,7 +12,8 @@ main {
     width: 50%; /* limits the width of the posts */
     max-width: 500px;
     margin: 0 30px;
-    margin-top: 80px;
+    min-height: auto; /* Change to auto so it doesn't force extra height */
+    height: 100%; /* Ensure the container takes up available space */
 }
 
 /* Styles for the post container */
@@ -22,7 +24,7 @@ main {
     border-radius: 10px;
     display: flex;
     flex-direction: column; /* flexbox for vertical layout */
-    position: relative; /* Добавлено для управления позиционированием даты */   
+    position: relative; /* added to control date positioning */   
 
 }
 
@@ -36,19 +38,26 @@ main {
     margin-bottom: 0;
 }
 
+.post-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* make the image circular */
+    margin-bottom: 10px;
+}
+
 .post-header {
     font-weight: bold;
     margin-bottom: 5px;
     font-size: 1.2em; /* increases the font size by 20% compared to the standard */
     position: absolute;
-    top: 10px; /* Расположим дату в правом верхнем углу */
-    right: 10px; /* Отступ справа */
-    font-size: 0.9em; /* Немного уменьшаем размер даты */
+    top: 10px; /* place the date in the upper right corner */
+    right: 10px;
+    font-size: 0.9em;
 }
 
-/* Стили для контейнера с изображением в посте */
+/* Styles for the image container in the post */
 .post-image {
-    margin-top: 25px; /* Отступ сверху между датой и изображением */
+    margin-top: 25px;
 }
 
 
@@ -79,13 +88,6 @@ main {
 .post-footer span:hover {
     transform: scale(1.2); /* scale the icon on hover */
 }
-
-/* Pseudo-element: adding text before post content */
- .post-content::before {
-    content: "Post: ";
-    font-weight: bold;
-    color: #333;
- }
 
 /* Sidebar styles */
 .sidebar {
