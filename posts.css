@@ -60,7 +60,6 @@ main {
     margin-top: 25px;
 }
 
-
 .post-image img {
     max-width: 100%;
     border-radius: 5px;
@@ -95,6 +94,17 @@ main {
     background-color: #e0e0e0;
     min-height: 100vh; /* full height of the page */
     border-radius: 10px;
+}
+
+/* Adjacent sibling selector for spacing between the post image and post footer */
+.post-image + .post-footer {
+    border-top: 1px solid #ccc; /* Add a border above the footer if it follows an image */
+    padding-top: 10px; /* Add some padding to make spacing more balanced */
+}
+
+/* General sibling selector for elements that come after post content */
+.post-content ~ * {
+    margin-top: 20px; /* Add more space between post content and following elements */
 }
 
  /* Responsiveness for mobile devices */

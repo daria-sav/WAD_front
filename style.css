@@ -27,7 +27,7 @@ header nav {
 }
 
 /* Remove bullet points from the navigation items */
-nav ul {
+nav > ul {
     list-style-type: none; /* Removes the default bullet points */
     display: flex;
     margin: 0;
