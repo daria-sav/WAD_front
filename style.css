@@ -1,9 +1,9 @@
 body.addPost,
 body.login {
     font-family: calibri;
-    display: flex;
+    /*display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;*/
     /* 
     display: flex makes the body a flex container
     justify-content: center centers horizontally
@@ -11,19 +11,20 @@ body.login {
     */
     min-height: 100vh; /* Set minimum height of the body to fill the screen */
     background-color: rgba(255, 255, 255);
+
 }
 
 /* Navigation Bar */
 header nav {
     background-color: #1f477d; /* Keep the original background color */
     padding: 10px 20px;
-    display: flex;
     justify-content: space-between; /* Distribute elements to both sides */
-    align-items: center;
     border-radius: 10px;
     margin-bottom: 10px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
 /* Remove bullet points from the navigation items */
@@ -99,7 +100,8 @@ body.login .container {
     border-radius: 15px;    /* rounded corners */
     width: 250px;
     text-align: center; /* Center align all text within the container */
-    margin-top: 70px;
+    margin: 20px auto;
+    margin-top: 100px;
 }
 
 h2 {
