@@ -1,6 +1,7 @@
 body.addPost,
 body.login {
     font-family: calibri;
+    /* я так понимаю следующие комменты можно удалить? если да то удалите */
     /*display: flex;
     justify-content: center;
     align-items: center;*/
