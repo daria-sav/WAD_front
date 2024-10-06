@@ -1,74 +1,73 @@
 /* Main container styling */
 main {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
+    display: flex; /* enables flex layout for the main container */
+    justify-content: space-between; /* distributes space between child elements evenly */
+    align-items: stretch; /* stretches child elements to match the container's height */
 }
 
 /* Container for posts to ensure vertical stacking */
 .posts-container {
     display: flex;
-    flex-direction: column; /* aligns posts vertically */
-    width: 50%; /* limits the width of the posts */
+    flex-direction: column; /* stacks child elements vertically */
+    width: 50%; /* sets the container's width to 50% of its parent */
     max-width: 500px;
-    margin: 0 30px;
-    min-height: auto; /* Change to auto so it doesn't force extra height */
-    height: 100%; /* Ensure the container takes up available space */
+    margin: 0 30px; /* applies zero margin top/bottom and 30px left/right */
+    min-height: auto; /* allows the height to adjust based on content */
+    height: 100%; /* makes the container fill the available vertical space */
 }
 
 /* Styles for the post container */
 .post {
     background-color: #f0f0f0;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 10px;
+    padding: 15px; /* adds padding inside the post */
+    margin: 10px 0; /* adds vertical spacing between posts */
+    border-radius: 10px; /* rounds the corners of the post */
     display: flex;
-    flex-direction: column; /* flexbox for vertical layout */
-    position: relative; /* added to control date positioning */   
+    flex-direction: column; /* arranges post content vertically */
+    position: relative; /* positions child elements relative to the post */  
 
 }
 
 /* Remove the indentation from the top of the first post */
 .post:first-child {
-    margin-top: 0;
+    margin-top: 0; /* eliminates top margin on the first post */
 }
 
 /* Remove the bottom indent from the last post */
 .post:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0; /* eliminates bottom margin on the last post */
 }
 
 .post-avatar img {
     width: 40px;
     height: 40px;
-    border-radius: 50%; /* make the image circular */
-    margin-bottom: 10px;
+    border-radius: 50%; /* makes the avatar image circular */
+    margin-bottom: 10px; /* adds space below the avatar */
 }
 
 .post-header {
     font-weight: bold;
-    margin-bottom: 5px;
-    font-size: 1.2em; /* increases the font size by 20% compared to the standard */
-    position: absolute;
+    margin-bottom: 5px; /* adds space below the header */
+    font-size: 0.9em;; /* slightly reduces the font size */
+    position: absolute; /* positions the header absolutely within the post */
     top: 10px; /* place the date in the upper right corner */
-    right: 10px;
-    font-size: 0.9em;
+    right: 10px; /* positions it 10px from the right */
 }
 
 /* Styles for the image container in the post */
 .post-image {
-    margin-top: 25px;
+    margin-top: 25px; /* Adds space above the image */
 }
 
 .post-image img {
-    max-width: 100%;
-    border-radius: 5px;
-    margin-bottom: 10px; /* makes the image no wider than the post container (it will automatically adjust to the size) */
+    max-width: 100%; /* ensures the image doesn't exceed the container's width */
+    border-radius: 5px; /* slightly rounds the image corners */
+    margin-bottom: 10px; /* adds space below the image */
 }
 
 .post-content {
-    font-size: 1em;
-    margin-bottom: 10px;
+    font-size: 1em; /* sets the content font size to default */
+    margin-bottom: 10px; /* adds space below the content */
 }
 
 .post-footer {
@@ -77,29 +76,29 @@ main {
 
 /* Styles for all icons in the footer (including different emojis) */
 .post-footer span {
-    cursor: pointer; /* changes the cursor to a pointer on mouse hover, indicating that the element is interactive */
-    font-size: 1.5em;
-    transition: transform 0.3s ease; /* smooth animation on hover */
-    display: inline-block; /* ensures that scaling works correctly */
+    cursor: pointer; /* changes cursor to pointer on hover */
+    font-size: 1.5em; /* increases the size of the icons */
+    transition: transform 0.3s ease; /* adds a smooth transition effect */
+    display: inline-block; /* allows transform to work properly */
 }
 
 /* General hover effect for icons */
 .post-footer span:hover {
-    transform: scale(1.2); /* scale the icon on hover */
+    transform: scale(1.2); /* enlarges the icon when hovered */
 }
 
 /* Sidebar styles */
 .sidebar {
-    flex-grow: 1; /* sidebars automatically take up the remaining space */
+    flex-grow: 1; /* allows the sidebar to expand and fill remaining space */
     background-color: #e0e0e0;
-    min-height: 100vh; /* full height of the page */
-    border-radius: 10px;
+    min-height: 100vh; /* makes the sidebar at least the height of the viewport */
+    border-radius: 10px; /* rounds the corners of the sidebar */
 }
 
 /* Adjacent sibling selector for spacing between the post image and post footer */
 .post-image + .post-footer {
-    border-top: 1px solid #ccc; /* Add a border above the footer if it follows an image */
-    padding-top: 10px; /* Add some padding to make spacing more balanced */
+    border-top: 1px solid #ccc; /* adds a top border if .post-footer follows .post-image */
+    padding-top: 10px; /* adds padding above the footer */
 }
 
 /* General sibling selector for elements that come after post content */
@@ -108,13 +107,13 @@ main {
 }
 
  /* Responsiveness for mobile devices */
- @media (max-width: 768px) { /* a media query that applies styles only to screens 768px wide and smaller */
+ @media (max-width: 768px) { /* applies styles for screens 768px wide or smaller */
     .post {
-        padding: 10px;
-        margin: 5px 0;
+        padding: 10px; /* reduces padding on smaller screens */
+        margin: 5px 0; /* reduces vertical margin between posts */
     }
 
     .post-footer {
-        text-align: left;
+        text-align: left; /* aligns footer content to the left on small screens */
     }
  }
