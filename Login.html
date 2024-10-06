@@ -19,6 +19,7 @@
             let email = document.getElementById("email").value;
             let username = document.getElementById("password").value;
 
+            // Check if both email and password fields are filled
             if (email == "" || username == "") {
                 alert("Please fill in both email and password fields.");
             } else {
@@ -29,6 +30,8 @@
 </head>
 
 <body class="login">
+
+    <!-- Navigation Bar -->
     <header>
         <nav>
             <ul>
@@ -36,30 +39,38 @@
             </ul>
             <div class="profile-icon">
                 <a href="Login.html">
+                    <!-- Profile avatar link to the login page -->
                     <img src="pictures/profileIcon.jpg" alt="Profile Icon" width="50" height="50">
                 </a>
             </div>
         </nav>
     </header>
 
+    <!-- The main container that holds all the content of the login page -->
     <div class="container">
+        <!-- Container with the welcome message-->
+        <!-- -->
         <div class="header">
             <h2>Welcome to PostIt</h2>
         </div>
+        <!-- Container with the "Create an account" link -->
         <div class="links">
             <a href="#">Create an account</a>
         </div>
         <div class="form">
             <h>or<br>Please log in</h>
             <form onsubmit="validateForm(event)">
+                <!-- The input field for the user's email -->
                 <div>
                     <input type="text" id="email" name="email" placeholder="Email" required>
                 </div>
+                <!-- The input field for the user's password -->
                 <div>
                     <input type="password" id="password" name="password" placeholder="Password" required>
                 </div>
                 <input type="submit" value="Log in"> 
             </form>
+            <!-- The submit button that triggers the form submission -->
             <div class="links">
                 <a href="#">Forget password</a>
             </div>
