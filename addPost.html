@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="addpost.css">
     <script>
-        // Нажатие на кнопку "Create Post" перенаправляет на страницу index.html
+        /* Clicking the "Create Post" button redirects to the index.html page */
         function redirectToIndex() {
             window.location.href = "index.html"; 
         }
@@ -19,33 +19,33 @@
     <header>
         <nav>
             <ul>
-                <li><a href="index.html" id="home" class="home-link">Home</a></li>
+                <li><a href="index.html" id="home" class="home-link">Home</a></li> <!-- Home button links to the main page -->
             </ul>
             <div class="profile-icon">
-                <!-- Profile avatar link to login page -->
+                <!-- Profile avatar link to the login page -->
                 <a href="Login.html">
-                    <img src="pictures/profileIcon.jpg" alt="Profile Icon" width="50" height="50">
+                    <img src="pictures/profileIcon.jpg" alt="Profile Icon" width="50" height="50"> <!-- Avatar image for the profile -->
                 </a>
             </div>
         </nav>
     </header>
 
-    <!-- Основной контент страницы -->
+    <!-- Main content of the page -->
     <main class="main-content">
         <div class="container">
-            <form id="postForm">
-                <!-- Поле для ввода текста поста -->
+            <form id="postForm"> <!-- Form: Used to send user data -->
+                <!-- Field for entering post text(form-group) -->
                 <div class="form-group">
-                    <label for="content">Post body</label>
-                    <textarea id="content" name="content" placeholder="Write your post here..." required></textarea>
+                    <label for="content">Post body</label> <!-- Label for the post body field -->
+                    <textarea id="content" name="content" placeholder="Write your post here..." required></textarea> <!-- Textarea for the post content -->
                 </div>
-                <!-- Поле для загрузки файла -->
+                <!-- Field for uploading the file(form-group) -->
                 <div class="form-group">
-                    <label for="file">Select file</label>
-                    <input type="file" id="file" name="file" required>
+                    <label for="file">Select file</label> <!-- Label for the file upload input -->
+                    <input type="file" id="file" name="file" required> <!-- File input -->
                 </div>
-                <!-- Кнопка создания поста -->
-                <button type="submit" class="btn" onclick="redirectToIndex()">Create Post</button>
+                <!-- Submit button for creating a post -->
+                <button type="submit" class="btn" onclick="redirectToIndex()">Create Post</button> <!-- Redirects to index.html -->
             </form>
         </div>
     </main>
