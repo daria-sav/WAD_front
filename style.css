@@ -1,39 +1,28 @@
 body.addPost,
 body.login {
-    font-family: calibri;
-    /* я так понимаю следующие комменты можно удалить? если да то удалите */
-    /*display: flex;
-    justify-content: center;
-    align-items: center;*/
-    /* 
-    display: flex makes the body a flex container
-    justify-content: center centers horizontally
-    align-items: center centers vertically
-    */
     min-height: 100vh; /* Set minimum height of the body to fill the screen */
     background-color: rgba(255, 255, 255);
-
 }
 
 /* Navigation Bar */
 header nav {
     background-color: #1f477d; /* Keep the original background color */
-    padding: 10px 20px;
+    padding: 10px 20px; /* Add padding around the content within the nav */
     justify-content: space-between; /* Distribute elements to both sides */
-    border-radius: 10px;
-    margin-bottom: 10px;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
+    border-radius: 10px;    /* Rounded corners for the nav bar */
+    margin-bottom: 10px;    /* Add a margin at the bottom of the nav bar */
+    position: relative; /* Allows positioning child elements within the nav (like the profile icon) */
+    overflow: hidden;   /* Prevents content from overflowing outside the nav bar */
+    display: flex;  /* Use flexbox to align items within the nav bar */
+    align-items: center;    /* Vertically align items to the center */
 }
 
 /* Remove bullet points from the navigation items */
 nav > ul {
     list-style-type: none; /* Removes the default bullet points */
-    display: flex;
-    margin: 0;
-    padding: 0;
+    display: flex;  /* Display the list items in a row */
+    margin: 0;  /* Remove default margin */
+    padding: 0; /* Remove default padding */
 }
 
 /* Styling each navigation item */
@@ -43,7 +32,7 @@ nav ul li {
 
 /* Styling for the links in the navigation */
 nav ul li a {
-    text-decoration: none;
+    text-decoration: none;  /* Remove underline from the links */
     color: #fff; /* Keep text color white as originally */
     font-size: 18px; /* Keep the original font size */
     font-weight: bold;
@@ -54,7 +43,7 @@ nav ul li a {
 /* Hover effect for links in the navigation */
 nav ul li a:hover {
     background-color: #132a48; /* Slightly darker background color */
-    border-radius: 5px;
+    border-radius: 5px; /* Rounded corners on hover */
 }
 
 /* User profile container */
@@ -65,14 +54,14 @@ nav ul li a:hover {
     overflow: hidden; /* Ensure the image fits inside the rounded border */
     border: 3px solid #fff; /* Add a white border to make it stand out */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Adds a soft shadow for visual pop */
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-right: 10px;
+    cursor: pointer;    /* Show a pointer cursor on hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;   /* Smooth transitions for hover effects */
+    margin-right: 10px; /* Add a margin to the right of the profile icon */
 }
 
 /* Profile Icon Image Styling */
 .profile-icon img {
-    width: 100%;
+    width: 100%;    /* Make the image fill the width of its container */
     height: 100%;
     object-fit: cover; /* Ensures the image fits perfectly in the container */
 }
@@ -86,10 +75,10 @@ nav ul li a:hover {
 /* Footer styles */
 footer {
     background-color: #d3d3d3; 
-    padding: 10px 20px; 
-    text-align: center; 
-    border-radius: 10px;
-    margin-top: 10px;
+    padding: 10px 20px; /* Add padding around the footer content */
+    text-align: center; /* Center align the text within the footer */
+    border-radius: 10px;    /* Rounded corners for the footer */
+    margin-top: 10px;   /* Add a margin at the top of the footer */
     font-weight: bold;
 }
 
@@ -99,10 +88,10 @@ body.login .container {
     background-color: rgb(216, 216, 216);
     padding: 20px 30px;     /* 20px on the top and bottom, 30px on the left and right.*/
     border-radius: 15px;    /* rounded corners */
-    width: 250px;
+    width: 250px;   /* Set the width of the container */
     text-align: center; /* Center align all text within the container */
-    margin: 20px auto;
-    margin-top: 100px;
+    margin: 20px auto;  /* Center the container horizontally with top/bottom margin */
+    margin-top: 100px;  /* Additional top margin to position the container lower */
 }
 
 h2 {
@@ -111,35 +100,36 @@ h2 {
 
 /* Target the first h2 for "Welcome" */
 .container h2:first-of-type { 
-    font-weight: bold; /* Make "Welcome" bold */
+    font-weight: bold;     /* Make the first h2 heading within the container bold */
 }
 
 /* Styles for text and password input fields */
 input[type="text"], input[type="password"] {
-    font-family: calibri;
-    width: calc(100% - 100px); /* Adjust width to account for padding */
-    padding: 10px;
-    margin: 10px 0;     /* Margin for the input fields: 10px top/bottom */
-    border-radius: 1px;
+    /*font-family: calibri;*/
+    width: calc(100% - 100px);     /* Adjust width to account for padding */
+    padding: 10px;     /* Add top/bottom margin to the input fields */
+    margin: 10px 0;    /* Margin for the input fields: 10px top/bottom */
+    border-radius: 1px;    /* Rounded corners for the input fields */
     border: 1px solid #ddd;
-    text-align: left
+    text-align: left    /* Align the input text to the left */
 }
 
 /* Styles for the submit button */
 input[type="submit"] {
     background-color: rgb(31, 71, 125);
     color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
+    padding: 10px 20px; /* Add padding around the button text */
+    border: none;   /* Remove default border */
+    border-radius: 3px; /* Rounded corners for the button */
+    cursor: pointer;    /* Show a pointer cursor on hover */
 }
 
 .links {
-    margin-top: 15px;
+    margin-top: 15px;   /* Add top margin to the links container */
 }
 
 .links a {
     color: rgb(0, 176, 240);
-    text-decoration: none;
+    text-decoration: none;  /* Remove underline from the links */
+}
 }
