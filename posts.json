@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "title": "Tartu 2024",
+        "author": "Admin",
+        "createTime": "2024-10-02T12:00:00",
+        "content": "Celebrating the cultural events coming up in Tartu!",
+        "image": "pictures/tartu.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Room Update",
+        "author": "Jane Smith",
+        "createTime": "2024-10-02T09:15:00",
+        "content": "Anyone knows in which room is the lab today?",
+        "image": ""
+    },
+    {
+        "id": 3,
+        "title": "Seminar Highlights",
+        "author": "John Doe",
+        "createTime": "2024-09-30T14:30:00",
+        "content": "Had a great time at the seminar today!",
+        "image": ""
+    },
+    {
+        "id": 4,
+        "title": "Project Kickoff",
+        "author": "Team Alpha",
+        "createTime": "2024-09-25T16:45:00",
+        "content": "Working on the new project!",
+        "image": "pictures/workingTogether.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Coffee Break",
+        "author": "Sarah Lee",
+        "createTime": "2024-09-20T10:00:00",
+        "content": "Coffee break with friends!",
+        "image": "pictures/coffeebreak.jpg"
+    },
+    {
+        "id": 6,
+        "title": "New Features Released",
+        "author": "Development Team",
+        "createTime": "2024-10-05T13:00:00",
+        "content": "Check out the new features we've added to the platform.",
+        "image": "pictures/feature-announcements.png"
+    },
+    {
+        "id": 7,
+        "title": "Meetup Reminder",
+        "author": "Event Organizer",
+        "createTime": "2024-10-07T08:30:00",
+        "content": "Don't forget about the community meetup happening this Friday!",
+        "image": "pictures/cutekitty.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Coding Tips",
+        "author": "Alex P.",
+        "createTime": "2024-09-28T17:00:00",
+        "content": "Remember to keep your code clean and well-documented!",
+        "image": ""
+    },
+    {
+        "id": 9,
+        "title": "Nature Walk",
+        "author": "Outdoor Enthusiast",
+        "createTime": "2024-09-22T11:00:00",
+        "content": "Exploring the beautiful trails around Tartu.",
+        "image": "pictures/naturewalk.jpg"
+    },
+    {
+        "id": 10,
+        "title": "System Maintenance",
+        "author": "Admin",
+        "createTime": "2024-10-08T06:00:00",
+        "content": "We will have a short downtime for system maintenance tonight.",
+        "image": ""
+    }
+]
