@@ -6,6 +6,7 @@
     <title>Add Post</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="addpost.css">
+    <script src="script.js"></script>
     <script>
         /* Clicking the "Create Post" button redirects to the index.html page */
         function redirectToIndex() {
@@ -21,11 +22,15 @@
             <ul>
                 <li><a href="index.html" id="home" class="home-link">Home</a></li> <!-- Home button links to the main page -->
             </ul>
-            <div class="profile-icon">
-                <!-- Profile avatar link to the login page -->
-                <a href="Login.html">
-                    <img src="pictures/profileIcon.jpg" alt="Profile Icon" width="50" height="50"> <!-- Avatar image for the profile -->
-                </a>
+            <!-- Profile icon with dropdown menu -->
+            <div class="profile-icon" onclick="toggleDropdown()">
+                <img src="pictures/profileIcon.jpg" alt="Profile Icon" width="50" height="50">
+            </div>
+            <!-- Dropdown menu -->
+            <div class="dropdown-menu">
+                <p>John Doe</p>
+                <p>john.doe@ut.ee</p>
+                <button onclick="redirectToLogin()">logout</button> <!-- Placeholder button for logout -->
             </div>
         </nav>
     </header>

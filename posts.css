@@ -1,7 +1,7 @@
 /* Main container styling */
 main {
-    display: flex; /* enables flex layout for the main container */
-    justify-content: space-between; /* distributes space between child elements evenly */
+    display: flex;
+    justify-content: space-between;
     align-items: stretch; /* stretches child elements to match the container's height */
 }
 
@@ -9,74 +9,74 @@ main {
 .posts-container {
     display: flex;
     flex-direction: column; /* stacks child elements vertically */
-    width: 50%; /* sets the container's width to 50% of its parent */
+    width: 50%; 
     max-width: 500px;
-    margin: 0 30px; /* applies zero margin top/bottom and 30px left/right */
-    min-height: auto; /* allows the height to adjust based on content */
+    margin: 0 30px;
+    min-height: auto;
     height: 100%; /* makes the container fill the available vertical space */
 }
 
 /* Styles for the post container */
 .post {
     background-color: #f0f0f0;
-    padding: 15px; /* adds padding inside the post */
-    margin: 10px 0; /* adds vertical spacing between posts */
+    padding: 15px;
+    margin: 10px 0;
     border-radius: 10px; /* rounds the corners of the post */
     display: flex;
-    flex-direction: column; /* arranges post content vertically */
-    position: relative; /* positions child elements relative to the post */  
+    flex-direction: column;
+    position: relative;
 
 }
 
 /* Remove the indentation from the top of the first post */
 .post:first-child {
-    margin-top: 0; /* eliminates top margin on the first post */
+    margin-top: 0;
 }
 
 /* Remove the bottom indent from the last post */
 .post:last-child {
-    margin-bottom: 0; /* eliminates bottom margin on the last post */
+    margin-bottom: 0;
 }
 
 .post-avatar img {
     width: 40px;
     height: 40px;
     border-radius: 50%; /* makes the avatar image circular */
-    margin-bottom: 10px; /* adds space below the avatar */
+    margin-bottom: 10px;
 }
 
 .post-header {
     font-weight: bold;
-    margin-bottom: 5px; /* adds space below the header */
-    font-size: 0.9em;; /* slightly reduces the font size */
-    position: absolute; /* positions the header absolutely within the post */
-    top: 10px; /* place the date in the upper right corner */
-    right: 10px; /* positions it 10px from the right */
+    margin-bottom: 5px;
+    font-size: 0.9em; /* slightly reduces the font size */
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 /* Styles for the image container in the post */
 .post-image {
-    margin-top: 25px; /* Adds space above the image */
+    margin-top: 25px; 
 }
 
 .post-image img {
-    max-width: 100%; /* ensures the image doesn't exceed the container's width */
+    max-width: 100%; 
     border-radius: 5px; /* slightly rounds the image corners */
-    margin-bottom: 10px; /* adds space below the image */
+    margin-bottom: 10px;
 }
 
 .post-content {
-    font-size: 1em; /* sets the content font size to default */
-    margin-bottom: 10px; /* adds space below the content */
+    font-size: 1em; 
+    margin-bottom: 10px; 
 }
 
 .post-footer {
-    text-align: right; /* aligns the footer content to the right. */
+    text-align: right; 
 }
 
 /* Styles for all icons in the footer (including different emojis) */
 .post-footer span {
-    cursor: pointer; /* changes cursor to pointer on hover */
+    cursor: pointer; 
     font-size: 1.5em; /* increases the size of the icons */
     transition: transform 0.3s ease; /* adds a smooth transition effect */
     display: inline-block; /* allows transform to work properly */
@@ -97,23 +97,23 @@ main {
 
 /* Adjacent sibling selector for spacing between the post image and post footer */
 .post-image + .post-footer {
-    border-top: 1px solid #ccc; /* adds a top border if .post-footer follows .post-image */
-    padding-top: 10px; /* adds padding above the footer */
+    border-top: 1px solid #ccc;
+    padding-top: 10px; 
 }
 
 /* General sibling selector for elements that come after post content */
 .post-content ~ * {
-    margin-top: 20px; /* Add more space between post content and following elements */
+    margin-top: 20px; 
 }
 
  /* Responsiveness for mobile devices */
  @media (max-width: 768px) { /* applies styles for screens 768px wide or smaller */
     .post {
-        padding: 10px; /* reduces padding on smaller screens */
-        margin: 5px 0; /* reduces vertical margin between posts */
+        padding: 10px; 
+        margin: 5px 0; 
     }
 
     .post-footer {
-        text-align: left; /* aligns footer content to the left on small screens */
+        text-align: left; 
     }
  }

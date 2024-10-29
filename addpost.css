@@ -1,38 +1,38 @@
 /* Textarea styles */
 #content {
     resize: none; /* Prevents the user from resizing the textarea */
-    height: 80px; /* Sets the height of the textarea to 80 pixels */
+    height: 80px;
 }
 
 /* Textarea and file input styles */ 
 #content,
 input[type="file"] { 
-    font-family: Calibri, sans-serif; /* Sets the font */
+    font-family: Calibri, sans-serif;
     flex: 1; /* Makes the element flexible, so it can grow to take available space */
-    padding: 10px; /* Adds 10 pixels of space inside the element (inside the borders) */
+    padding: 10px;
     box-sizing: border-box; /* Ensures padding is included in the element's width and height */
 }
 
 /* Form-group(label, input, textarea) styles */
 .form-group {
     display: flex; /* Puts the label and input/textarea next to each other in one row */
-    align-items: center; /* Aligns the label and input/textarea vertically in the middle */
-    margin-bottom: 15px; /* Adds 15 pixels of space below each form group */
+    align-items: center;
+    margin-bottom: 15px;
 }
 
 /* Label styles */
 .form-group label {
     flex: 0; /* Prevents the label from growing or shrinking (fixed size) */
-    margin-right: 10px; /* Adds 10 pixels of space between the label and the input field */
-    width: 100px; /* Sets a fixed width of 100 pixels for all labels to make them aligned */
+    margin-right: 10px;
+    width: 100px;
 }
 
 /* Button styles */
 button[type="submit"].btn {
-    padding: 10px; /* General padding for all buttons. Adds 10 pixels of space inside the button */
-    border: none; /* Removes the default border around the button */
-    cursor: pointer; /* Changes the cursor to a pointer (hand) when hovering over the button */
-    background-color: #1b5e8a; /* Sets the button's background color to dark blue */
-    color: white; /* Sets the text color to white */
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #1b5e8a;
+    color: white;
     border-radius: 3px; /* Slightly rounds the corners of the button (3 pixels) */
 }

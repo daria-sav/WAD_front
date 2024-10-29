@@ -27,12 +27,16 @@
 //     })
 //     .catch(error => console.error('Error fetching posts:', error));
 
+
+
 function loadPosts() {
-    fetch('posts.json') // Загружаем локальный JSON файл
+    const postsContainer = document.querySelector('.posts-container');
+    if (!postsContainer) return; // if container not found -> end the function
+
+    fetch('posts.json') // Downloading local JSON file
         .then(response => response.json())
         .then(posts => {
-            const postsContainer = document.querySelector('.posts-container');
-            postsContainer.innerHTML = ''; // Очищаем контейнер перед добавлением постов
+            postsContainer.innerHTML = ''; // Clearing the container before adding posts
             posts.forEach(post => {
                 const postElement = document.createElement('div');
                 postElement.classList.add('post');
@@ -57,5 +61,27 @@ function loadPosts() {
         .catch(error => console.error('Error fetching local posts:', error));
 }
 
-// Вызов функции при загрузке страницы
+// Calling a function when the page loads
 window.onload = loadPosts;
+
+// Toggles the visibility of the dropdown menu by switching between 'block' and 'none'.
+function toggleDropdown() {
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+}
+
+// Close the dropdown menu when clicking outside of it
+/*window.onclick = function(event) {
+    if (!event.target.matches('.profile-icon, .profile-icon *')) {
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+        if (dropdownMenu) {
+            dropdownMenu.style.display = 'none';
+        }
+    }
+};*/
+
+function redirectToLogin() {
+    window.location.href = "Login.html";
+}
+
+
