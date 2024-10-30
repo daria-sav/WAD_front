@@ -1,3 +1,22 @@
+.dropdown-menu button {
+    background: none;
+    border: none;
+    color: #1f477d;
+    cursor: pointer;
+    text-align: left;
+    padding: 5px 0;
+    font-size: 14px;
+    width: 100%; /* Make the button span full width */
+    display: block; /* Make it a block-level element */
+}
+
+.dropdown-menu p:hover, /* Hover effect for text */
+.dropdown-menu button:hover, /* Hover effect for the button */
+.dropdown-menu a:hover { /* Hover effect for links */
+    background-color: #1f477d; /* Blue background on hover */
+    color: white; /* White text color on hover */
+}
+
 body.addPost,
 body.login {
     min-height: 100vh; /* Set minimum height of the body to fill the screen */
