@@ -123,20 +123,73 @@ const Header = {
 };
 
   // Определение компонента Footer
-  const Footer = {
+const Footer = {
     template: `
-      <footer class="footer">
-        <p>&copy; 2024 Your Company. All rights reserved.</p>
+     <footer class="footer">
+       <p>&copy; 2024 TU. All rights reserved.</p>
       </footer>
     `,
-  };
-// Создание экземпляра Vue
+};
+
+// Создание хранилища Vuex
+const store = new Vuex.Store({
+  state: {
+    posts: []
+  },
+  mutations: {
+    setPosts(state, posts) {
+      state.posts = posts;
+    }
+  },
+  actions: {
+    fetchPosts({ commit }) {
+      fetch('../data/posts.json')
+        .then(response => response.json())
+        .then(data => {
+          commit('setPosts', data);
+        });
+    }
+  }
+});
+
+// Компонент Post
+const Post = {
+  props: ['post'],
+  template: `
+    <div class="post">
+      <div class="post-avatar">
+        <img :src="post.image || '../assets/images/defaultAvatar.jpg'" alt="User Avatar">
+      </div>
+      <div class="post-header">
+        <span>{{ new Date(post.createTime).toLocaleDateString() }}</span>
+      </div>
+      <div class="post-content">
+        <p>{{ post.content }}</p>
+      </div>
+      <div class="post-footer">
+        <span>🩷</span>
+      </div>
+    </div>
+  `
+};
+
+// Основное приложение
 const app = Vue.createApp({
-    components: {
-      'header-component': Header,
-      'footer-component': Footer,
-    },
+  computed: {
+    posts() {
+      return this.$store.state.posts;
+    }
+  },
+  created() {
+    this.$store.dispatch('fetchPosts');
+  },
+  components: {
+    'header-component': Header,
+    'footer-component': Footer,
+    'post-component': Post
+  },
 });
   
-  // Монтирование приложения на элемент с id "app"
+// Присоединяем хранилище Vuex к приложению Vue
+app.use(store);
 app.mount('#app');
