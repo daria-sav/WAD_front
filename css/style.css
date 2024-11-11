@@ -163,7 +163,6 @@ input[type="submit"] {
 
 /* Dropdown menu styling */
 .dropdown-menu {
-    display: none; /* Hidden by default */
     position: absolute;
     top: 100%;
     right: 10px;

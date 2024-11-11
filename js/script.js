@@ -28,7 +28,7 @@
 //     .catch(error => console.error('Error fetching posts:', error));
 
 
-
+// Function to load posts from a local JSON file and render them in the posts container
 function loadPosts() {
     const postsContainer = document.querySelector('.posts-container');
     if (!postsContainer) return; // if container not found -> end the function
@@ -64,84 +64,64 @@ function loadPosts() {
 // Calling a function when the page loads
 window.onload = loadPosts;
 
-// Toggles the visibility of the dropdown menu by switching between 'block' and 'none'.
-// function toggleDropdown() {
-//     const dropdownMenu = document.querySelector('.dropdown-menu');
-//     dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-// }
-
-// Close the dropdown menu when clicking outside of it
-/*window.onclick = function(event) {
-    if (!event.target.matches('.profile-icon, .profile-icon *')) {
-        const dropdownMenu = document.querySelector('.dropdown-menu');
-        if (dropdownMenu) {
-            dropdownMenu.style.display = 'none';
-        }
-    }
-};*/
-
-// function redirectToLogin() {
-//     window.location.href = "../pages/Login.html";
-// }
-
-// Определение компонента Header
+// Definition of the Header component
 const Header = {
-    template: `
-      <header class="header">
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="addPost.html">Add Post</a></li>
-          </ul>
-          <div class="profile-icon" @click="toggleDropdown">
-            <img src="../assets/images/profileIcon.jpg" alt="Profile Icon" width="40" height="40">
-          </div>
-          <div class="dropdown-menu" v-if="dropdownVisible">
-            <p>John Doe</p>
-            <p>john.doe@ut.ee</p>
-            <button @click="logout">Logout</button>
-          </div>
-        </nav>
-      </header>
-    `,
-    data() {
-      return {
-        dropdownVisible: false,
-      };
+  template: `
+    <header class="header">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="addPost.html">Add Post</a></li>
+        </ul>
+        <div class="profile-icon" @click="toggleDropdown">
+          <img src="../assets/images/profileIcon.jpg" alt="Profile Icon" width="40" height="40">
+        </div>
+        <div class="dropdown-menu" v-if="dropdownVisible">
+          <p>John Doe</p>
+          <p>john.doe@ut.ee</p>
+          <button @click="logout">Logout</button>
+        </div>
+      </nav>
+    </header>
+  `,
+  data() {
+    return {
+      dropdownVisible: false, // Controls visibility of the dropdown menu
+    };
+  },
+  methods: {
+    // Toggle dropdown menu visibility
+    toggleDropdown() {
+      this.dropdownVisible = !this.dropdownVisible;
     },
-    methods: {
-      toggleDropdown() {
-        console.log('toggleDropdown called');
-        this.dropdownVisible = !this.dropdownVisible;
-        console.log('dropdownVisible:', this.dropdownVisible);
-      },
-      logout() {
-        // Логика выхода из аккаунта
-        window.location.href = "../pages/Login.html";
-      },
+    // Redirect to the login page
+    logout() {
+      window.location.href = "../pages/Login.html";
     },
+  },
 };
 
-  // Определение компонента Footer
+// Definition of the Footer component
 const Footer = {
-    template: `
-     <footer class="footer">
-       <p>&copy; 2024 TU. All rights reserved.</p>
-      </footer>
-    `,
+  template: `
+   <footer class="footer">
+     <p>&copy; 2024 TU. All rights reserved.</p>
+    </footer>
+  `,
 };
 
-// Создание хранилища Vuex
+// Creating the Vuex store for managing application state
 const store = new Vuex.Store({
   state: {
-    posts: []
+    posts: [] // Stores fetched posts data
   },
   mutations: {
     setPosts(state, posts) {
-      state.posts = posts;
+      state.posts = posts; // Update posts data in the store
     }
   },
   actions: {
+    // Fetch posts from the JSON file and commit them to the store
     fetchPosts({ commit }) {
       fetch('../data/posts.json')
         .then(response => response.json())
@@ -152,7 +132,7 @@ const store = new Vuex.Store({
   }
 });
 
-// Компонент Post
+// Definition of the Post component for displaying individual posts
 const Post = {
   props: ['post'],
   template: `
@@ -173,14 +153,16 @@ const Post = {
   `
 };
 
-// Основное приложение
+// Main Vue application setup
 const app = Vue.createApp({
   computed: {
+    // Retrieves posts from the Vuex store
     posts() {
       return this.$store.state.posts;
     }
   },
   created() {
+    // Fetch posts when the application is created
     this.$store.dispatch('fetchPosts');
   },
   components: {
@@ -190,6 +172,6 @@ const app = Vue.createApp({
   },
 });
   
-// Присоединяем хранилище Vuex к приложению Vue
+// Attach Vuex store to the Vue app
 app.use(store);
 app.mount('#app');
