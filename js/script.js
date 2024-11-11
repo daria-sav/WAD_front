@@ -33,7 +33,7 @@ function loadPosts() {
     const postsContainer = document.querySelector('.posts-container');
     if (!postsContainer) return; // if container not found -> end the function
 
-    fetch('posts.json') // Downloading local JSON file
+    fetch('../data/posts.json') // Downloading local JSON file
         .then(response => response.json())
         .then(posts => {
             postsContainer.innerHTML = ''; // Clearing the container before adding posts
@@ -42,7 +42,7 @@ function loadPosts() {
                 postElement.classList.add('post');
                 postElement.innerHTML = `
                     <div class="post-avatar">
-                        <img src="pictures/profileIcon.jpg" alt="User Avatar">
+                        <img src="../assets/images/profileIcon.jpg" alt="User Avatar">
                     </div>
                     <div class="post-header">
                         <span>${new Date(post.createTime).toLocaleDateString()}</span>
@@ -81,7 +81,7 @@ function toggleDropdown() {
 };*/
 
 function redirectToLogin() {
-    window.location.href = "Login.html";
+    window.location.href = "../pages/Login.html";
 }
 
 
