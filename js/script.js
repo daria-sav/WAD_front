@@ -65,10 +65,10 @@ function loadPosts() {
 window.onload = loadPosts;
 
 // Toggles the visibility of the dropdown menu by switching between 'block' and 'none'.
-function toggleDropdown() {
-    const dropdownMenu = document.querySelector('.dropdown-menu');
-    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-}
+// function toggleDropdown() {
+//     const dropdownMenu = document.querySelector('.dropdown-menu');
+//     dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+// }
 
 // Close the dropdown menu when clicking outside of it
 /*window.onclick = function(event) {
@@ -80,8 +80,63 @@ function toggleDropdown() {
     }
 };*/
 
-function redirectToLogin() {
-    window.location.href = "../pages/Login.html";
-}
+// function redirectToLogin() {
+//     window.location.href = "../pages/Login.html";
+// }
 
+// Определение компонента Header
+const Header = {
+    template: `
+      <header class="header">
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="addPost.html">Add Post</a></li>
+          </ul>
+          <div class="profile-icon" @click="toggleDropdown">
+            <img src="../assets/images/profileIcon.jpg" alt="Profile Icon" width="40" height="40">
+          </div>
+          <div class="dropdown-menu" v-if="dropdownVisible">
+            <p>John Doe</p>
+            <p>john.doe@ut.ee</p>
+            <button @click="logout">Logout</button>
+          </div>
+        </nav>
+      </header>
+    `,
+    data() {
+      return {
+        dropdownVisible: false,
+      };
+    },
+    methods: {
+      toggleDropdown() {
+        console.log('toggleDropdown called');
+        this.dropdownVisible = !this.dropdownVisible;
+        console.log('dropdownVisible:', this.dropdownVisible);
+      },
+      logout() {
+        // Логика выхода из аккаунта
+        window.location.href = "../pages/Login.html";
+      },
+    },
+};
 
+  // Определение компонента Footer
+  const Footer = {
+    template: `
+      <footer class="footer">
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+      </footer>
+    `,
+  };
+// Создание экземпляра Vue
+const app = Vue.createApp({
+    components: {
+      'header-component': Header,
+      'footer-component': Footer,
+    },
+});
+  
+  // Монтирование приложения на элемент с id "app"
+app.mount('#app');

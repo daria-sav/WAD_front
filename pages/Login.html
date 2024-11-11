@@ -25,59 +25,49 @@
             }
         }
     </script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/vuex@4"></script>
 </head>
 
 <body class="login">
+    <div id="app">
+        <!-- Navigation Bar -->
+        <header-component></header-component>
 
-    <!-- Navigation Bar -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html" id="home" class="home-link">Home</a></li>
-            </ul>
-            <div class="profile-icon">
-                <a href="Login.html">
-                    <!-- Profile avatar link to the login page -->
-                    <img src="../assets/images/profileIcon.jpg" alt="Profile Icon" width="50" height="50">
-                </a>
+        <!-- The main container that holds all the content of the login page -->
+        <div class="container">
+            <!-- Container with the welcome message-->
+            <!-- -->
+            <div class="header">
+                <h2>Welcome to PostIt</h2>
             </div>
-        </nav>
-    </header>
-
-    <!-- The main container that holds all the content of the login page -->
-    <div class="container">
-        <!-- Container with the welcome message-->
-        <!-- -->
-        <div class="header">
-            <h2>Welcome to PostIt</h2>
-        </div>
-        <!-- Container with the "Create an account" link -->
-        <div class="links">
-            <a href="#">Create an account</a>
-        </div>
-        <div class="form">
-            <h>or<br>Please log in</h>
-            <form onsubmit="validateForm(event)">
-                <!-- The input field for the user's email -->
-                <div>
-                    <input type="text" id="email" name="email" placeholder="Email" required>
-                </div>
-                <!-- The input field for the user's password -->
-                <div>
-                    <input type="password" id="password" name="password" placeholder="Password" required>
-                </div>
-                <input type="submit" value="Log in"> 
-            </form>
-            <!-- The submit button that triggers the form submission -->
+            <!-- Container with the "Create an account" link -->
             <div class="links">
-                <a href="#">Forget password</a>
+                <a href="#">Create an account</a>
+            </div>
+            <div class="form">
+                <h>or<br>Please log in</h>
+                <form onsubmit="validateForm(event)">
+                    <!-- The input field for the user's email -->
+                    <div>
+                        <input type="text" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <!-- The input field for the user's password -->
+                    <div>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                    </div>
+                    <input type="submit" value="Log in"> 
+                </form>
+                <!-- The submit button that triggers the form submission -->
+                <div class="links">
+                    <a href="#">Forget password</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>UT 2024</p>
-     </footer>
+        <!-- Footer -->
+        <footer-component></footer-component>
+    </div>
+    <script src="../js/script.js"></script>
 </body>
 </html>

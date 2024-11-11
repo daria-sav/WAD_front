@@ -6,45 +6,31 @@
     <title>Home Page</title>
     <link rel="stylesheet" href="../css/posts.css">
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/script.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vuex@4"></script>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <header>
-        <nav>
-            <!-- Navigation menu -->
-            <ul>
-                <!-- Unordered list for navigation links -->
-                <li><a href="index.html" id="home" class="home-link">Home</a></li>
-                <li><a href="addPost.html" id="addPost" class="addpost-link">Add Post</a></li>
-            </ul>
-            <div class="profile-icon" onclick="toggleDropdown()">
-                <img src="../assets/images/profileIcon.jpg" alt="Profile Icon" width="50" height="50">
-            </div>
-            <!-- Dropdown menu -->
-            <div class="dropdown-menu">
-                <p>John Doe</p>
-                <p>john.doe@ut.ee</p>
-                <button onclick="redirectToLogin()">logout</button>
-            </div>
-        </nav>
-    </header>
-    
-    <!-- Main content with posts -->
-     <main>
-        <!-- Left panel -->
-        <div class="sidebar"></div> 
+    <!-- Контейнер приложения Vue -->
+  <div id="app">
+        <!-- Navigation Bar -->
+        <header-component></header-component>
+        
+        <!-- Main content with posts -->
+        <main>
+            <!-- Left panel -->
+            <div class="sidebar"></div> 
 
-        <!-- Central container for posts -->
-        <div class="posts-container"></div>
+            <!-- Central container for posts -->
+            <div class="posts-container"></div>
 
-        <!-- Right panel -->
-        <div class="sidebar"></div> 
-     </main>
+            <!-- Right panel -->
+            <div class="sidebar"></div> 
+        </main>
 
-     <!-- Footer -->
-     <footer>
-        <p>UT 2024</p>
-     </footer>
+        <!-- Footer -->
+        <footer-component></footer-component>
+    </div>
+
+    <script src="../js/script.js"></script>
 </body>
 </html>
