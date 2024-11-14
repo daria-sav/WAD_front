@@ -71,12 +71,14 @@ const Header = {
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="addPost.html">Add Post</a></li>
+          <!-- Display link to add post only if it is not login page -->
+          <li v-if="!isLoginPage"><a href="addPost.html">Add Post</a></li>
         </ul>
-        <div class="profile-icon" @click="toggleDropdown">
+        <div class="profile-icon" @click="profileAction">
           <img src="../assets/images/profileIcon.jpg" alt="Profile Icon" width="40" height="40">
         </div>
-        <div class="dropdown-menu" v-if="dropdownVisible">
+        <!-- The drop-down menu only appears on pages other than the login page. -->
+        <div v-if="dropdownVisible && !isLoginPage" class="dropdown-menu">
           <p>John Doe</p>
           <p>john.doe@ut.ee</p>
           <button @click="logout">Logout</button>
@@ -89,12 +91,31 @@ const Header = {
       dropdownVisible: false, // Controls visibility of the dropdown menu
     };
   },
+  computed: {
+    // Get the name of the current page
+    currentPage() {
+      return window.location.pathname.split('/').pop();
+    },
+    // Check if the current page is the login page
+    isLoginPage() {
+      return this.currentPage === 'Login.html';
+    },
+  },
   methods: {
-    // Toggle dropdown menu visibility
+    // Action when clicking on profile icon
+    profileAction() {
+      if (this.isLoginPage) {
+        // If we are on the login page, refresh the page
+        window.location.href = "Login.html";
+      } else {
+        this.toggleDropdown();
+      }
+    },
+    // Toggle visibility of dropdown menu
     toggleDropdown() {
       this.dropdownVisible = !this.dropdownVisible;
     },
-    // Redirect to the login page
+    // Action when logging out of an account
     logout() {
       window.location.href = "../pages/Login.html";
     },
