@@ -76,16 +76,13 @@ main {
 
 /* Styles for all icons in the footer (including different emojis) */
 .post-footer span {
-    cursor: pointer; 
     font-size: 1.5em; /* increases the size of the icons */
-    transition: transform 0.3s ease; /* adds a smooth transition effect */
     display: inline-block; /* allows transform to work properly */
 }
 
-/* General hover effect for icons */
+/* General hover effect for icons
 .post-footer span:hover {
     transform: scale(1.2); /* enlarges the icon when hovered */
-}
 
 /* Sidebar styles */
 .sidebar {
