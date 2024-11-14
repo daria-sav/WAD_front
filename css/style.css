@@ -190,3 +190,52 @@ input[type="submit"] {
     padding: 5px 0;
     font-size: 14px;
 }
+
+
+/* Styling for like icon and counter*/
+.like-icon {
+    cursor: pointer;
+    font-size: 1.5em;
+    margin-right: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.like-icon:hover {
+    transform: scale(1.2);
+}
+
+.likes-count {
+    font-size: 14px;
+    color: #555;
+    margin-left: 5px;
+}
+
+.like-icon,
+.likes-count {
+    user-select: none;           /* Standard syntax */
+    -webkit-user-select: none;   /* Safari */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+}
+
+/* Container for the reset button */
+.reset-button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Style for the reset likes button */
+.reset-likes-button {
+    background-color: #33549a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.reset-likes-button:hover {
+    background-color: #3c63bd;
+}
+
