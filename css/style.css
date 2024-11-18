@@ -1,3 +1,18 @@
+#password-error {
+    color: rgb(31, 71, 125);
+    font-size: 14px;
+    margin-top: 5px;
+    padding: 8px 12px;
+    border: 1px solid rgb(31, 71, 125); /* Add a red border */
+    border-radius: 4px; /* Add rounded corners */
+    background-color: rgb(232, 240, 254); /* Add a light red background */
+    display: none; /* Initially hide the error message */
+  }
+  
+  .spacer {
+    height: 340px;
+  }
+
 .dropdown-menu button {
     background: none;
     border: none;

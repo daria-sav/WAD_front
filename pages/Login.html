@@ -15,15 +15,65 @@
             event.preventDefault(); // Prevent default submission
 
             let email = document.getElementById("email").value;
-            let username = document.getElementById("password").value;
+            let password = document.getElementById("password").value;
+            
 
             // Check if both email and password fields are filled
-            if (email == "" || username == "") {
+            if (email == "" || password == "") {
                 alert("Please fill in both email and password fields.");
             } else {
-                redirectToIndex(); // Redirect to index.html if validation passes
+                const validationMessage = validatePassword(password);
+
+                if (validationMessage) {
+                    // Password is invalid, display error message in the div
+                    const errorDiv = document.getElementById("password-error");
+                    errorDiv.innerHTML = validationMessage;
+                    errorDiv.style.display = "block"; // Show the error message
+                } else {
+                    // Password is valid
+                    redirectToIndex(); // Redirect to index.html
+                }
             }
         }
+        // Function to validate the password
+        function validatePassword(password) {
+            const errors = [];
+            // The password should be of a specific length (at least 8 chars and less than 15 chars)
+            if (password.length < 8 || password.length > 15) {
+                errors.push("The password should be between 8 and 15 characters long.");
+                // Abb_1        <- fails the test
+            }
+            // Includes at least one uppercase alphabet character
+            if (!/[A-Z]/.test(password)) {
+                errors.push("The password should include at least one uppercase character.");
+                // bb_1bb_1bb_1        <- fails the test
+            }
+            // Includes at least two lowercase alphabet characters
+            if (!/(.*[a-z]){2}/.test(password)) {
+                errors.push("The password should include at least two lowercase characters.");
+                // A_1A_1A_1A_1b        <- fails the test
+            }
+            // Includes at least one numeric value
+            if (!/\d/.test(password)) {
+                errors.push("The password should include at least one numeric value.");
+                // Abb_Abb_Abb_        <- fails the test
+            }
+            // It should start with an uppercase alphabet
+            if (!/^[A-Z]/.test(password)) {
+                errors.push("The password should start with an uppercase character.");
+                // bb_1Abb_1Abb_1        <- fails the test
+            }
+            // It should include the character "_"
+            if (!/_/.test(password)) {
+                errors.push("The password should include the character '_'.");
+                // Abb1Abb1Abb1        <- fails the test
+            }
+            // Return error messages
+            return errors.length > 0
+                ? "The password is not valid<br>-<br>" + errors.join("<br>") // Add line breaks here
+                : "";
+        }
+
     </script>
     <script src="https://unpkg.com/vue@3"></script>
     <script src="https://unpkg.com/vuex@4"></script>
@@ -56,6 +106,8 @@
                     <!-- The input field for the user's password -->
                     <div>
                         <input type="password" id="password" name="password" placeholder="Password" required>
+                        <div id="password-error"></div> 
+                        <br>
                     </div>
                     <input type="submit" value="Log in">
                 </form>
@@ -66,8 +118,10 @@
             </div>
         </div>
 
-        <!-- Footer -->
+        <!-- Footer -->  
+        <div class="spacer"></div>
         <footer-component></footer-component>
+
     </div>
     <script src="../js/script.js"></script>
 </body>
