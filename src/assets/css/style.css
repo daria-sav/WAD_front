@@ -32,8 +32,8 @@
     color: white; /* White text color on hover */
 }
 
-body.addPost,
-body.login {
+.addPost,
+.login {
     min-height: 100vh; /* Set minimum height of the body to fill the screen */
     background-color: rgba(255, 255, 255);
 }
@@ -127,8 +127,8 @@ footer-component, header-component {
 }
 
 /* container style*/
-body.addpost .container, 
-body.login .container {
+.addpost .container, 
+.login .container {
     background-color: rgb(216, 216, 216);
     padding: 20px 30px;
     border-radius: 15px; /* rounded corners */

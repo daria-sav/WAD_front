@@ -5,7 +5,7 @@
         "author": "Admin",
         "createTime": "2024-10-02T12:00:00",
         "content": "Celebrating the cultural events coming up in Tartu!",
-        "image": "../assets/images/tartu.jpg",
+        "image": "tartu.jpg",
         "likes": 10
     },
     {
@@ -32,7 +32,7 @@
         "author": "Team Alpha",
         "createTime": "2024-09-25T16:45:00",
         "content": "Working on the new project!",
-        "image": "../assets/images/workingTogether.jpg",
+        "image": "workingTogether.jpg",
         "likes": 5
     },
     {
@@ -41,16 +41,16 @@
         "author": "Sarah Lee",
         "createTime": "2024-09-20T10:00:00",
         "content": "Coffee break with friends!",
-        "image": "../assets/images/coffeebreak.jpg",
+        "image": "coffeebreak.jpg",
         "likes": 37
     },
     {
         "id": 6,
-        "title": "New Features Released",
+        "title": "Neassetsw Features Released",
         "author": "Development Team",
         "createTime": "2024-10-05T13:00:00",
         "content": "Check out the new features we've added to the platform.",
-        "image": "../assets/images/feature-announcements.png",
+        "image": "feature-announcements.png",
         "likes": 17
     },
     {
@@ -59,7 +59,7 @@
         "author": "Event Organizer",
         "createTime": "2024-10-07T08:30:00",
         "content": "Don't forget about the community meetup happening this Friday!",
-        "image": "../assets/images/cutekitty.jpg",
+        "image": "cutekitty.jpg",
         "likes": 28
     },
     {
@@ -77,7 +77,7 @@
         "author": "Outdoor Enthusiast",
         "createTime": "2024-09-22T11:00:00",
         "content": "Exploring the beautiful trails around Tartu.",
-        "image": "../assets/images/naturewalk.jpg",
+        "image": "naturewalk.jpg",
         "likes": 8
     },
     {
