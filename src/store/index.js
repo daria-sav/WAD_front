@@ -20,6 +20,14 @@ export default createStore({
         post.likes = 0;
       });
     },
+    setToken(state, token) {
+      state.token = token;
+      localStorage.setItem('authToken', token); // save token in localStorage
+    },
+    clearToken(state) {
+      state.token = null;
+      localStorage.removeItem('authToken'); // delete token
+    },
   },
   actions: {
     fetchPosts({ commit }) {
@@ -29,6 +37,23 @@ export default createStore({
           commit('setPosts', data);
         })
         .catch((error) => console.error('Error fetching posts:', error));
+    },
+    login({ commit }, { email, password }) {
+      return fetch('http://localhost:3000/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      })
+        .then((res) => {
+          if (!res.ok) throw new Error('Login failed');
+          return res.json();
+        })
+        .then((data) => {
+          commit('setToken', data.token); // save the token
+        });
+    },
+    logout({ commit }) {
+      commit('clearToken');
     },
   },
 });
