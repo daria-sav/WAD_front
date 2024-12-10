@@ -41,17 +41,37 @@
       const errorMessage = ref('');
       const router = useRouter();
   
-      const validateForm = () => {
+      const validateForm = async () => {
         if (!email.value || !password.value) {
           alert('Please fill in both email and password fields.');
           return;
         }
   
-        const validationError = validatePassword(password.value);
-        if (validationError) {
-          errorMessage.value = validationError;
-        } else {
-          router.push('/');
+        // const validationError = validatePassword(password.value);
+        // if (validationError) {
+        //   errorMessage.value = validationError;
+        //   return;
+        // } 
+
+        try {
+          const response = await fetch('http://localhost:3000/auth/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email: email.value, password: password.value }),
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            localStorage.setItem('token', data.token); // Сохранение токена в localStorage
+            router.push('/'); // Перенаправление на домашнюю страницу
+          } else {
+            alert('Login failed. Please check your email and password.');
+          }
+        } catch (err) {
+          console.error('Error during login:', err);
+          alert('An error occurred while logging in.');
         }
       };
   

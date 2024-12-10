@@ -10,7 +10,7 @@
       <img :src="postImagePath" :alt="post.title">
     </div>
     <div class="post-content">
-      <p>{{ post.content }}</p>
+      <p>{{ post.body }}</p>
     </div>
     <div class="post-footer">
       <span @click="likePost" @mousedown.prevent class="like-icon">🩷</span>
@@ -25,7 +25,8 @@ export default {
   props: ['post'],
   computed: {
     formattedDate() {
-      return new Date(this.post.createTime).toLocaleDateString();
+      const date = new Date(this.post.created_at);
+      return !isNaN(date.getTime()) ? date.toLocaleDateString() : 'Invalid Date';
     },
     postImagePath() {
       if (this.post.image) {

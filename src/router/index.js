@@ -5,7 +5,6 @@ import LoginPage from '../views/LoginPage.vue';
 import SignupPage from '../views/SignupPage.vue';
 import ContactsPage from '../views/ContactsPage.vue';
 import PostPage from '../views/PostPage.vue';
-import store from '../store';
 
 const routes = [
   { path: '/', name: 'Home', component: HomePage, meta: { requiresAuth: true } },
