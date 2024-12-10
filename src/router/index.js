@@ -22,10 +22,11 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.meta.requiresAuth && !store.state.token) {
-    next('/login'); // redirect to login page if user is not logged in
+  const isAuthenticated = !!localStorage.getItem('token');
+  if (to.meta.requiresAuth && !isAuthenticated) {
+    next('/login'); // Redirect to login if not authenticated
   } else {
-    next(); // continue navigation
+    next(); // Proceed to route
   }
 });
 

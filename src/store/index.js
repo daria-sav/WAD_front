@@ -30,13 +30,17 @@ export default createStore({
     },
   },
   actions: {
-    fetchPosts({ commit }) {
-      fetch('/data/posts.json')
-        .then((response) => response.json())
-        .then((data) => {
-          commit('setPosts', data);
-        })
-        .catch((error) => console.error('Error fetching posts:', error));
+    async fetchPosts({ commit }) {
+      try {
+        const response = await fetch('http://localhost:3000/posts', {
+          headers: { Authorization: localStorage.getItem('token') },
+        });
+        if (!response.ok) throw new Error('Failed to fetch posts');
+        const posts = await response.json();
+        commit('setPosts', posts);
+      } catch (error) {
+        console.error('Error fetching posts:', error.message);
+      }
     },
     login({ commit }, { email, password }) {
       return fetch('http://localhost:3000/auth/login', {
