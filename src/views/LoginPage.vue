@@ -41,7 +41,7 @@
       const errorMessage = ref('');
       const router = useRouter();
   
-      const validateForm = async () => {
+      const validateForm = () => {
         if (!email.value || !password.value) {
           alert('Please fill in both email and password fields.');
           return;
@@ -53,26 +53,24 @@
         //   return;
         // } 
 
-        try {
-          const response = await fetch('http://localhost:3000/auth/login', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email: email.value, password: password.value }),
+        fetch('http://localhost:3000/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email.value, password: password.value }),
+        })
+          .then((res) => {
+            if (!res.ok) {
+              throw new Error('Invalid credentials');
+            }
+            return res.json();
+          })
+          .then((data) => {
+            localStorage.setItem('token', data.token); // save token
+            router.push('/'); // move to the home page
+          })
+          .catch((err) => {
+            alert(err.message);
           });
-
-          if (response.ok) {
-            const data = await response.json();
-            localStorage.setItem('token', data.token); // Сохранение токена в localStorage
-            router.push('/'); // Перенаправление на домашнюю страницу
-          } else {
-            alert('Login failed. Please check your email and password.');
-          }
-        } catch (err) {
-          console.error('Error during login:', err);
-          alert('An error occurred while logging in.');
-        }
       };
   
       const validatePassword = (password) => {

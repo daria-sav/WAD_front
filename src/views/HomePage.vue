@@ -33,6 +33,12 @@
       };
   
       onMounted(() => {
+        const token = localStorage.getItem('token');
+        if (!token) {
+          router.push('/login'); // Перенаправляем на логин, если токен отсутствует
+          return;
+        }
+        
         store.dispatch('fetchPosts');
       });
   
