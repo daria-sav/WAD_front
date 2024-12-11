@@ -41,7 +41,7 @@
       const errorMessage = ref('');
       const router = useRouter();
   
-      const validateForm = () => {
+      const validateForm = async () => {
         if (!email.value || !password.value) {
           alert('Please fill in both email and password fields.');
           return;
@@ -53,24 +53,24 @@
         //   return;
         // } 
 
-        fetch('http://localhost:3000/auth/login', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: email.value, password: password.value }),
-        })
-          .then((res) => {
-            if (!res.ok) {
-              throw new Error('Invalid credentials');
-            }
-            return res.json();
-          })
-          .then((data) => {
-            localStorage.setItem('token', data.token); // save token
-            router.push('/'); // move to the home page
-          })
-          .catch((err) => {
-            alert(err.message);
+        try {
+          const response = await fetch('http://localhost:3000/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email.value, password: password.value }),
           });
+
+          if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(errorText);
+          }
+
+          const data = await response.json();
+          localStorage.setItem('token', data.token); // Save token
+          router.push('/'); // Redirect to homepage
+        } catch (err) {
+          alert('Login failed: ' + err.message);
+        }
       };
   
       const validatePassword = (password) => {
