@@ -49,10 +49,10 @@ export default {
       if (errorMessage.value) { return };
 
       try {
-        
-        const response = await api.post('/auth/signup', {  // Backend request
-          email: email.value,
-          password: password.value,
+        const response = await fetch('http://localhost:3000/auth/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email.value, password: password.value }),
         });
 
         if (!response.ok) { 

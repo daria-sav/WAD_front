@@ -44,10 +44,11 @@ export default {
       errorMessage.value = ''; // Resetting the error message
 
       try {
-        const response = await api.post('/auth/login', {  // Backend request
-          email: email.value,
-          password: password.value,
-        });
+        const response = await fetch('http://localhost:3000/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email.value, password: password.value }),
+          });
 
         if (!response.ok) {
           const errorText = await response.text();
