@@ -13,11 +13,11 @@
       <div class="post-content">
         <p>{{ post.body }}</p>
       </div>
-    </router-link>
-    <div class="post-footer">
-      <span @click="likePost" @mousedown.prevent class="like-icon">🩷</span>
-      <span class="likes-count">{{ post.likes }} Likes</span>
-    </div>
+      </router-link>
+      <div class="post-footer">
+        <span @click="likePost" @mousedown.prevent class="like-icon">🩷</span>
+        <span class="likes-count">{{ post.likes }} Likes</span>
+      </div>
   </div>
 </template>
 

@@ -229,6 +229,7 @@ footer-component, header-component {
 }
 
 /* Style for the reset likes button */
+/*
 .reset-likes-button {
     background-color: #33549a;
     color: white;
@@ -242,6 +243,7 @@ footer-component, header-component {
 .reset-likes-button:hover {
     background-color: #3c63bd;
 }
+*/
 
 /* Logout button container above posts */
 .logout-container {
