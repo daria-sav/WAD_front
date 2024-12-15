@@ -114,3 +114,94 @@ main {
         text-align: left; 
     }
  }
+
+ .post-link {
+    text-decoration: none;
+    color: inherit; 
+}
+
+.post-link:link, .post-link:visited, .post-link:hover, .post-link:active {
+    color: inherit; 
+    text-decoration: none;
+}
+
+.post p {
+    margin: 0;
+}
+
+/* Styles for "a post" and "add post" */
+
+/* Container for "A Post" and "Add Post" */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 73vh;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container for post details (PostPage) */
+.post-detail-container {
+    background-color: #d3d3d3;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.post-title {
+    color: black;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Styles for post/add-post */
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-row label {
+    width: 50px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.post-input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.update-btn,
+.delete-btn,
+.add-btn {
+    background-color: #33549a;
+}
+
+/* styles for AddPostPage */
+
+.post-title {
+    color: black;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.add-btn:hover,
+.update-btn:hover,
+.delete-btn:hover {
+    background-color: #3c63bd;
+}

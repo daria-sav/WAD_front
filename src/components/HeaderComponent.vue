@@ -3,7 +3,6 @@
       <nav>
         <ul>
           <li><router-link to="/">Home</router-link></li>
-          <li v-if="!isLoginPage"><router-link to="/add-post">Add Post</router-link></li>
         </ul>
         <div class="profile-icon" @click="profileAction">
           <img src="@/assets/images/profileIcon.jpg" alt="Profile Icon">

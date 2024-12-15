@@ -1,17 +1,19 @@
 <template>
   <div class="post">
-    <div class="post-avatar">
-      <img src="@/assets/images/profileIcon.jpg" alt="User Avatar">
-    </div>
-    <div class="post-header">
-      <span>{{ formattedDate }}</span>
-    </div>
-    <div class="post-image" v-if="post.image">
-      <img :src="postImagePath" :alt="post.title">
-    </div>
-    <div class="post-content">
-      <p>{{ post.body }}</p>
-    </div>
+    <router-link :to="`/post/${post.id}`" class="post-link">
+      <div class="post-avatar">
+        <img src="@/assets/images/profileIcon.jpg" alt="User Avatar">
+      </div>
+      <div class="post-header">
+        <span>{{ formattedDate }}</span>
+      </div>
+      <div class="post-image" v-if="post.image">
+        <img :src="postImagePath" :alt="post.title">
+      </div>
+      <div class="post-content">
+        <p>{{ post.body }}</p>
+      </div>
+    </router-link>
     <div class="post-footer">
       <span @click="likePost" @mousedown.prevent class="like-icon">🩷</span>
       <span class="likes-count">{{ post.likes }} Likes</span>

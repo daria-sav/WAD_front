@@ -13,29 +13,51 @@
     height: 340px;
   }
 
-.dropdown-menu button {
-    background: none;
-    border: none;
-    color: #1f477d;
-    cursor: pointer;
-    text-align: left;
-    padding: 5px 0;
-    font-size: 14px;
-    width: 100%; /* Make the button span full width */
-    display: block; /* Make it a block-level element */
-}
-
-.dropdown-menu p:hover, /* Hover effect for text */
-.dropdown-menu button:hover, /* Hover effect for the button */
-.dropdown-menu a:hover { /* Hover effect for links */
-    background-color: #1f477d; /* Blue background on hover */
-    color: white; /* White text color on hover */
-}
-
-.addPost,
 .login {
     min-height: 100vh; /* Set minimum height of the body to fill the screen */
     background-color: rgba(255, 255, 255);
+}
+
+
+
+/* container style*/
+.login .container {
+    background-color: rgb(216, 216, 216);
+    padding: 20px 30px;
+    border-radius: 15px; /* rounded corners */
+    width: 250px;
+    text-align: center;
+    margin: 20px auto;
+    margin-top: 100px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+/* Target the first h2 for "Welcome" */
+.container h2:first-of-type { 
+    font-weight: bold;
+}
+
+/* Styles for text and password input fields */
+input[type="text"], input[type="password"] {
+    width: calc(100% - 100px); /* Adjust width to account for padding */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 1px; /* Rounded corners for the input fields */
+    border: 1px solid #ddd;
+    text-align: left    
+}
+
+/* Styles for the submit button */
+input[type="submit"] {
+    background-color: rgb(31, 71, 125);
+    color: #fff;
+    padding: 10px 20px;
+    border: none; /* Remove default border */
+    border-radius: 3px; /* Rounded corners for the button */
+    cursor: pointer;
 }
 
 /* Navigation Bar */
@@ -115,7 +137,7 @@ nav ul li a:hover {
     padding: 10px 20px;
     text-align: center;
     border-radius: 10px; /* Rounded corners for the footer */
-    margin-top: 10px;
+    margin-top: auto;
     font-weight: bold;
     width: 100%; 
     box-sizing: border-box;
@@ -124,47 +146,6 @@ nav ul li a:hover {
 footer-component, header-component {
     display: block;
     width: 100%;
-}
-
-/* container style*/
-.addpost .container, 
-.login .container {
-    background-color: rgb(216, 216, 216);
-    padding: 20px 30px;
-    border-radius: 15px; /* rounded corners */
-    width: 250px;
-    text-align: center;
-    margin: 20px auto;
-    margin-top: 100px;
-}
-
-h2 {
-    margin-bottom: 10px;
-}
-
-/* Target the first h2 for "Welcome" */
-.container h2:first-of-type { 
-    font-weight: bold;
-}
-
-/* Styles for text and password input fields */
-input[type="text"], input[type="password"] {
-    width: calc(100% - 100px); /* Adjust width to account for padding */
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 1px; /* Rounded corners for the input fields */
-    border: 1px solid #ddd;
-    text-align: left    
-}
-
-/* Styles for the submit button */
-input[type="submit"] {
-    background-color: rgb(31, 71, 125);
-    color: #fff;
-    padding: 10px 20px;
-    border: none; /* Remove default border */
-    border-radius: 3px; /* Rounded corners for the button */
-    cursor: pointer;
 }
 
 .links {
@@ -199,13 +180,21 @@ input[type="submit"] {
 .dropdown-menu button {
     background: none;
     border: none;
-    color: #007bff;
+    color: #1f477d;
     cursor: pointer;
     text-align: left;
     padding: 5px 0;
     font-size: 14px;
+    width: 100%; /* Make the button span full width */
+    display: block; /* Make it a block-level element */
 }
 
+.dropdown-menu p:hover, /* Hover effect for text */
+.dropdown-menu button:hover, /* Hover effect for the button */
+.dropdown-menu a:hover { /* Hover effect for links */
+    background-color: #1f477d; /* Blue background on hover */
+    color: white; /* White text color on hover */
+}
 
 /* Styling for like icon and counter*/
 .like-icon {
@@ -254,3 +243,33 @@ input[type="submit"] {
     background-color: #3c63bd;
 }
 
+/* Logout button container above posts */
+.logout-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Actions container for Add post and Delete all buttons at the bottom */
+  .actions-container {
+    text-align: center;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* button styling */
+  .btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #33549a;
+    color: #fff;
+  }
+  
+  .btn:hover {
+    background-color: #3c63bd;
+  }
+  
