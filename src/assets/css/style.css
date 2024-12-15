@@ -6,7 +6,7 @@
     border: 1px solid rgb(31, 71, 125); /* Add a red border */
     border-radius: 4px; /* Add rounded corners */
     background-color: rgb(232, 240, 254); /* Add a light red background */
-    display: none; /* Initially hide the error message */
+    /*display: none; /* Initially hide the error message */
   }
   
   .spacer {
