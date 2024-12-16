@@ -3,6 +3,7 @@
       <nav>
         <ul>
           <li><router-link to="/">Home</router-link></li>
+          <li><router-link to="/contacts">Contacts</router-link></li>
         </ul>
         <div class="profile-icon" @click="profileAction">
           <img src="@/assets/images/profileIcon.jpg" alt="Profile Icon">
